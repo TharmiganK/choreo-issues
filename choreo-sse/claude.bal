@@ -8,8 +8,8 @@ type Request record {|
     string name;
 |};
 
-service on new http:Listener(9090) {
-    isolated resource function post .(Request reques) returns stream<http:SseEvent, error?>|error {
+service /api on new http:Listener(9090) {
+    isolated resource function post app(Request reques) returns stream<http:SseEvent, error?>|error {
         io:println("Request from user", reques);
         json req = {
             "model": "claude-2",
