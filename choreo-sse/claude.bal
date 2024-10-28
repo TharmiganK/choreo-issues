@@ -8,7 +8,9 @@ type Request record {|
     string name;
 |};
 
-service /api on new http:Listener(9090) {
+listener http:Listener listenerEP = new(9090);
+
+service /api on listenerEP {
     isolated resource function post app(Request reques) returns stream<http:SseEvent, error?>|error {
         io:println("Request from user", reques);
         json req = {
