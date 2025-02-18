@@ -13,4 +13,4 @@ WORKDIR /home/ballerina
 EXPOSE  9090
 USER ballerina
 
-CMD java -Xdiag -cp "admin-http2_passthrough-0.1.0.jar:jars/*" 'admin.http2_passthrough.0.$_init'
+CMD java -Xdiag -cp "admin-http2_passthrough-0.1.0.jar:jars/*" 'admin.http2_passthrough.0.$_init' -Cballerina.http.traceLogConsole=true
