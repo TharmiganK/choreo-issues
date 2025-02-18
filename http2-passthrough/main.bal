@@ -3,10 +3,7 @@ import ballerina/http;
 final http:Client echoClient = check new ("https://echo.free.beeceptor.com");
 
 service / on new http:Listener(9090) {
-    resource function get greeting(string? name) returns http:Response|error {
-        if name is () {
-            return error("name should not be empty!");
-        }
-        return echoClient->/post.post(string `Hello, ${name}`);
+    resource function post greeting(@http:Payload json payload) returns http:Response|error {
+        return echoClient->/post.post(payload);
     }
 }
