@@ -1,6 +1,10 @@
-schemaVersion: 1.0
+schemaVersion: "1.1"
 endpoints:
-- name: http2-endpoint
-  service:
-     port: 9090
-  type: REST
+    - name: http2-endpoint
+      displayName: http2-endpoint
+      service:
+        basePath: /
+        port: 9090
+      type: REST
+      networkVisibilities:
+        - Public
