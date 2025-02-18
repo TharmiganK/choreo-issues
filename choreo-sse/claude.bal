@@ -17,4 +17,8 @@ service /api on new http:Listener(9090) {
         };
         return clientEp->/v1/complete.post(req, headers = {"x-api-key": apiKey, "anthropic-version": "2023-06-01"});
     }
+
+    isolated resource function get models() returns json|error {
+        return clientEp->/v1/models.get(headers = {"x-api-key": apiKey, "anthropic-version": "2023-06-01"});
+    }
 }
