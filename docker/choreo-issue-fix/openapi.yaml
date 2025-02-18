@@ -10,37 +10,9 @@ servers:
     port:
       default: "9090"
 paths:
-  /v1:
+  /result:
     get:
-      operationId: getV1
-      responses:
-        "200":
-          description: Ok
-          content:
-            application/json: {}
-        "500":
-          description: InternalServerError
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorPayload'
-  /v2:
-    get:
-      operationId: getV2
-      responses:
-        "200":
-          description: Ok
-          content:
-            application/json: {}
-        "500":
-          description: InternalServerError
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorPayload'
-  /v3:
-    get:
-      operationId: getV3
+      operationId: getResult
       responses:
         "200":
           description: Ok
