@@ -1,0 +1,11 @@
+schemaVersion: 1.1
+endpoints:
+    - name: choreo-sse
+      displayName: choreo-sse
+      service:
+        basePath: /api
+        port: 9090
+      type: REST
+      networkVisibilities:
+        - Public
+      schemaFilePath: openapi.yaml
