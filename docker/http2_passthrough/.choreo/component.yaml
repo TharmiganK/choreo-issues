@@ -1,4 +1,4 @@
-schemaVersion: "1.1"
+schemaVersion: 1.1
 endpoints:
     - name: http2-endpoint
       displayName: http2-endpoint
@@ -8,3 +8,4 @@ endpoints:
       type: REST
       networkVisibilities:
         - Public
+      schemaFilePath: openapi.yaml
